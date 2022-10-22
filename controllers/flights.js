@@ -21,6 +21,6 @@ function create(req, res) {
     flight.save(function(err) {
         if (err) return res.redirect('/flights/new');
         console.log(flight);
-        res.redirect('movies/new');
+        res.redirect('/flights/new');
     });
 };
