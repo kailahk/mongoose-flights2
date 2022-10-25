@@ -4,6 +4,13 @@ module.exports = {
     index,
     new: newFlight,
     create,
+    show
+};
+
+function show(req, res) {
+    Flight.findById(req.params.id, function(err, flight) {
+        res.render('flights/show', { flight });
+    });
 };
 
 function index(req, res) {
@@ -21,6 +28,6 @@ function create(req, res) {
     flight.save(function(err) {
         if (err) return res.redirect('/flights/new');
         console.log(flight);
-        res.redirect('/flights/new');
+        res.redirect('/flights');
     });
 };
