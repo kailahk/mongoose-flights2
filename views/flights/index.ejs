@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
 <h2>Flight List</h2>
+<% if (flights.length) { %>
 <table id="indexTable">
   <thead>
     <tr>
@@ -22,6 +23,12 @@
       </tr>
     <% }); %>
   </tbody>
+</table>
+<% } else { %>
+  <tbody>
+    <h5>No Flights Yet</h5>
+  </tbody>
+  <% } %>
 </table>
 
 <%- include('../partials/footer') %>
